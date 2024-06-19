@@ -19,4 +19,19 @@ class SerialGenerator:
     >>> serial.generate()
     100
     """
+    
+    def __init__(self, start):
+        """Initialize the serial generator with a start number."""
+        self.start = start
+        self.current = start
+
+    def generate(self):
+        """Generate the next serial number."""
+        serial_number = self.current
+        self.current += 1
+        return serial_number
+
+    def reset(self):
+        """Reset the serial number back to the original start number."""
+        self.current = self.start
 
